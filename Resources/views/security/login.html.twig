@@ -1,0 +1,19 @@
+{% trans_default_domain 'DrawUserBundle' %}
+
+{% extends '@DrawUser/security/base_box.html.twig' %}
+
+{% block login_box_body %}
+    <p class="login-box-msg">{{ 'form.authenticate.header'|trans }}</p>
+    {% block login_error %}
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+    {% endblock %}
+    {{ form(form) }}
+    <a href="{{ path('admin_forgot_password') }}">{{ 'form.authenticate.forgot_password'|trans }}</a>
+{% endblock login_box_body %}
+
+{% block login_box_footer %}
+{% endblock login_box_footer %}

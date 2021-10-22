@@ -1,0 +1,8 @@
+{% trans_default_domain 'DrawUserBundle' %}
+
+{% extends '@DrawUser/security/base_box.html.twig' %}
+
+{% block login_box_body %}
+    <p class="login-box-msg">{{ 'form.change_password.header'|trans() }}</p>
+    {{ form(form) }}
+{% endblock login_box_body %}
